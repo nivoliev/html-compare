@@ -1,0 +1,75 @@
+.main {
+  width : 1200px ;
+  font-family : 'Sans' ;
+  margin : auto ;
+}
+
+h1 {
+  margin : auto ;
+}
+
+p {
+  text-align : justify ;
+}
+
+.compare {
+  margin : auto ;
+  position : relative ;
+  margin-top : 20px ;
+  padding : 5px ;
+  border : 1px solid #adadad ;
+  border-radius : 3px ;
+}
+
+.compare .compared {
+  visibility : hidden ;
+  position : absolute ;
+}
+
+.magnifier {
+  position : absolute ;
+  border : 1px solid #000 ;
+  border-radius : 20px ;
+  box-shadow: 0 0 1px 0 black inset, 0 0 1px 0 black;
+  width : 200px ;
+  height : 200px ;
+  overflow : hidden ;
+  margin : 20px ;
+  display : none ;
+  z-index : 2 ;
+}
+
+.compare-settings {
+  display : flex ;
+  align-items : center ;
+  justify-content : space-between ;
+}
+
+.compare-setting {
+  /*background-color : #494949 ;*/
+  padding : 5px ;
+  border : 1px solid #adadad ;
+  border-radius : 5px ;
+  display : flex ;
+  align-items : center ;
+}
+
+.range-container {
+  display : flex ;
+  align-items : center ;
+  border : 1px solid #0099cc ;
+  border-radius : 5px ;
+  box-shadow: 0 0 1px 0 #0099cc inset ;
+  margin-left : 5px ;
+  margin-right : 5px ;
+  position : relative ;
+}
+
+.compare-setting label {
+  font-family : 'Sans-serif' ;
+}
+
+.compare-setting input[type="range"] {
+  background-color : #fff ;
+  border : 1px solid #00f ;
+}
