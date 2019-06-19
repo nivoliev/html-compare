@@ -489,6 +489,29 @@
     return container ;
   }
 
+  function create_play_toggle(context) {
+    //container
+    var container = document.createElement("div") ;
+    container.className = "compare-setting" ;
+
+    //play / pause
+    var icon = document.createElement("div") ;
+    icon.className = "pause" ;
+    videos = context.sources.map(c => c.elt).filter(e => e.nodeName == "VIDEO") ;
+    icon.addEventListener("click", function() {
+      if(icon.classList.contains("play")) {
+        icon.classList.replace("play", "pause") ;
+        videos.forEach(v => v.play()) ;
+      } else {
+        icon.classList.replace("pause", "play") ;
+        videos.forEach(v => v.pause()) ;
+      }
+    }) ;
+
+    container.appendChild(icon) ;
+    return container ;
+  }
+
   /* add settings bar to the DOM */
   function create_settings(elt, context) {
     //settings bar
@@ -500,10 +523,15 @@
     var zoom = create_slider("Zoom", context, "zoom", 1, 10) ;
     settings.appendChild(zoom) ;
 
-    //video speed slider only for videos
+    //video specific settings
     var c0 = context.sources[0].elt ;
     var c1 = context.sources[1].elt ;
     if(c0.nodeName == "VIDEO" || c1.nodeName == "VIDEO") {
+      //play pause
+      var playpause = create_play_toggle(context) ;
+      settings.appendChild(playpause) ;
+
+      //video speed slider
       var speed = create_slider("Speed", context, "speed", 0, 1, 0.1)
       var slider = speed.querySelector("input")
       //update video playback speed on slider change
