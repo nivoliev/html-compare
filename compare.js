@@ -506,6 +506,30 @@
         }
       }) ;
       settings.appendChild(speed) ;
+
+      /* Testing */
+      play_btn = document.createElement("button") ;
+      play_btn.innerHTML = "play" ;
+      settings.appendChild(play_btn) ;
+      play_btn.addEventListener("click", function(e) {
+        if(c0.nodeName == "VIDEO") {
+          c0.play() ;
+        }
+        if(c1.nodeName == "VIDEO") {
+          c1.play() ;
+        }
+      }) ;
+      pause_btn = document.createElement("button") ;
+      pause_btn.innerHTML = "pause" ;
+      settings.appendChild(pause_btn) ;
+      pause_btn.addEventListener("click", function(e) {
+        if(c0.nodeName == "VIDEO") {
+          c0.pause() ;
+        }
+        if(c1.nodeName == "VIDEO") {
+          c1.pause() ;
+        }
+      }) ;
     }
 
     return zoom ;
