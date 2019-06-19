@@ -25,13 +25,23 @@
         //the video is still not available, add hook
         videos[0].addEventListener("loadedmetadata", function(e) {
           wait_for_videos(videos.slice(1), comparator, action) ;
-        })
+        }) ;
       } else {
         //the video is ready, proceed to the remaining ones
         wait_for_videos(videos.slice(1), comparator, action) ;
       }
+      //manual autoplay
+      if(videos[0].readyState < 4) {
+        //not enough data is available, add a play trigger when available
+        videos[0].addEventListener("canplay", function(e) {
+          e.currentTarget.play() ;
+        }) ;
+      } else {
+        //sufficient data is available, play
+        videos[0].play() ;
+      }
     } else {
-      //al videos are ready, proceed to setup
+      //all videos are ready, proceed to setup
       action(comparator) ;
     }
   }
@@ -506,30 +516,6 @@
         }
       }) ;
       settings.appendChild(speed) ;
-
-      /* Testing */
-      play_btn = document.createElement("button") ;
-      play_btn.innerHTML = "play" ;
-      settings.appendChild(play_btn) ;
-      play_btn.addEventListener("click", function(e) {
-        if(c0.nodeName == "VIDEO") {
-          c0.play() ;
-        }
-        if(c1.nodeName == "VIDEO") {
-          c1.play() ;
-        }
-      }) ;
-      pause_btn = document.createElement("button") ;
-      pause_btn.innerHTML = "pause" ;
-      settings.appendChild(pause_btn) ;
-      pause_btn.addEventListener("click", function(e) {
-        if(c0.nodeName == "VIDEO") {
-          c0.pause() ;
-        }
-        if(c1.nodeName == "VIDEO") {
-          c1.pause() ;
-        }
-      }) ;
     }
 
     return zoom ;
