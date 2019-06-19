@@ -1,5 +1,9 @@
 # Comparing images and videos with splits
 
+A basic set of tools to compare side by side images and videos on web pages.
+
+[Demo](https://nivoliev.github.io/html-compare/)
+
 ## Basics
 
 The comparison of elements is handled by inserting a div with class
@@ -66,3 +70,8 @@ size and shape is controlled with css. Round magnifiers can be obtained
 using equal width and height, and a border-radius of half that size. The
 overflow should be hidden to crop the (square) contained canvas to the
 rounded corners. Do as you wish for the rest.
+
+## References and acknowledgements
+
+* a key answer about [synchronizing videos in html5](https://stackoverflow.com/questions/20683744/how-to-perfectly-sync-two-or-more-html5-video-tags)
+* [play and pause through CSS](https://css-tricks.com/making-pure-css-playpause-button/)
