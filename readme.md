@@ -17,8 +17,8 @@ attribute.
 
 ```html
 <div class="compare">
-  <img class="compared compared-left" data-compare="standard" src="single-012.png"/>
-  <img class="compared compared-right" data-compare="ours" src="multi-012.png"/>
+  <img class="compared compared-left" data-compare="standard" src="standard.png"/>
+  <img class="compared compared-right" data-compare="ours" src="ours.png"/>
 </div>
 ```
 
