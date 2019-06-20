@@ -73,5 +73,7 @@ rounded corners. Do as you wish for the rest.
 
 ## References and acknowledgements
 
-* a key answer about [synchronizing videos in html5](https://stackoverflow.com/questions/20683744/how-to-perfectly-sync-two-or-more-html5-video-tags)
+* a key answer about [synchronizing videos](https://stackoverflow.com/questions/20683744/how-to-perfectly-sync-two-or-more-html5-video-tags)
 * [play and pause through CSS](https://css-tricks.com/making-pure-css-playpause-button/)
+* [agent 327 open movie](https://agent327.com/) by the Blender institute for the
+  3D data
