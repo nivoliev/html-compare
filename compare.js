@@ -497,7 +497,7 @@
     //play / pause
     var icon = document.createElement("div") ;
     icon.className = "pause" ;
-    videos = context.sources.map(c => c.elt).filter(e => e.nodeName == "VIDEO") ;
+    var videos = context.sources.map(c => c.elt).filter(e => e.nodeName == "VIDEO") ;
     icon.addEventListener("click", function() {
       if(icon.classList.contains("play")) {
         icon.classList.replace("play", "pause") ;
